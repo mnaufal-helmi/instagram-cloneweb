@@ -11,9 +11,9 @@ function Login() {
 
     if (email === exampleEmail && password === examplePassword) {
       setIsloggedIn(true)
-      alert('Login succes')
+      // alert('Login succes')
     } else {
-      alert('Invalid email or password')
+      // alert('Invalid email or password')
     }
   }
 
