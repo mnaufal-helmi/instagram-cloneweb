@@ -1,21 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import  { Routes, Route } from 'react-router-dom'
+import {Home, InboxPage, ProfilePage} from './features/pages/index'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          First
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route exact path='/' element={<Home />} />
+        <Route exact path='/Inbox' element={<InboxPage/>}/>
+        <Route exact path='/Profile' element={<ProfilePage/>}/>  
+      </Routes>
+    </>
   );
 }
 
