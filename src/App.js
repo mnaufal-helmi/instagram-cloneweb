@@ -1,10 +1,20 @@
-import Login from '../src/features/pages/Login'
+import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-     <Login />
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          First
+        </a>
+      </header>
     </div>
   );
 }
