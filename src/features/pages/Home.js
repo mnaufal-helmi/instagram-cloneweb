@@ -1,8 +1,11 @@
 import React from 'react'
+import SidebarNav from '../Layouts/SidebarNav'
 
 function Home() {
   return (
-    <div>Home</div>
+    <div>
+      <SidebarNav/>
+    </div>
   )
 }
 
