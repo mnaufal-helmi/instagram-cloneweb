@@ -1,8 +1,20 @@
 import './App.css';
+
+
 import  { BrowserRouter ,Routes, Route } from 'react-router-dom'
 import {Home, InboxPage, ProfilePage} from './features/pages/index'
+import { API } from './features/config/API';
+import { useQuery } from 'react-query';
+
 
 function App() {
+  let {data: post} = useQuery("postCache", async () => {
+    const response = await API.get("/posts")
+    return response.data.data
+  })
+
+  // console.log(post)
+
   return (
     <>
     <BrowserRouter>
