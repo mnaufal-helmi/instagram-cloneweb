@@ -1,6 +1,4 @@
 import './App.css';
-
-
 import  { BrowserRouter ,Routes, Route } from 'react-router-dom'
 import {Home, InboxPage, ProfilePage} from './features/pages/index'
 import { API } from './features/config/API';
