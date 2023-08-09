@@ -1,6 +1,6 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 body {
   margin: 0;
@@ -17,7 +17,19 @@ code {
 }
 
 .wrapper {
-  background-color: aqua;
+  background-color: white;
   width: 20%;
-  height: 100%;
+  height: 100vh;
+  margin-left: 10px;
+}
+.wrapperIcon{
+ background-color: white;
+ border: black;
+ border-style: groove;
+ justify-content: center;
+ align-items: center;
+}
+.instagramLogo{
+  /* height: 2%;
+  width: 2%; */
 }
