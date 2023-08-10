@@ -85,17 +85,20 @@ export default function SidebarNav() {
     <div className="wrapper">
       <div
         style={{
-          backgroundColor: "blue",
+          // backgroundColor: "blue",
           height: "70px",
           width: "270px",
         }}
       >
         <div
-          style={{
-            // height: "100px",
-            // width: "300px",
-            border: "solid",
-          }}
+          style={
+            {
+              // height: "100px",
+              // width: "300px",
+              // border: "solid",
+              // borderColor: "red",
+            }
+          }
         >
           <img
             src={Instagram}
@@ -107,32 +110,29 @@ export default function SidebarNav() {
       </div>
       <nav className="wrapperIcon">
         {sidemenu.map((item, index) => (
-          <ul className="space-y-2 mt-3 border-solid border-2 border-indigo-300">
-            <li key={index} style={{ maxHeight: "80px" }}>
-              <a
-                href={item.page}
-                className="text-red hover:bg-gray-200 px-4 py-2 block rounded flex"
-              >
+          <ul className="space-y-2 mt-3 ">
+            <li key={index} className="">
+              <a href={item.page} className="text-red hover:bg-gray-200 flex">
                 <div
-                  style={{ height: "60px", width: "100px", border: "solid" }}
+                  style={{ height: "60px", width: "100px" }}
+                  className="hover:scale-125 transition duration-500 cursor-pointer "
                 >
                   <img
                     src={item.icon}
-                    className="object-cover h-6 w-6"
+                    className="object-cover h-6 w-6 mt-3 ml-4 "
                     alt=""
-                    style={{ height: "" }}
                   />
                 </div>
                 <div
-                  className="origin-center"
                   style={{
-                    color: "black",
-                    border: "solid",
+                    // color: "red",
+                    // border: "solid",
                     height: "60px",
                     width: "100%",
+                    // backgroundColor: "black",
                   }}
                 >
-                  {item.name}
+                  <div className=" items-center">{item.name}</div>
                 </div>
               </a>
             </li>
