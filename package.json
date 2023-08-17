@@ -2,6 +2,7 @@
   "name": "instagram-cloneweb",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@heroicons/react": "^2.0.18",
     "@material-tailwind/react": "^2.0.8",
@@ -17,11 +18,17 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(css|scss)$": "identity-obj-proxy"
+    }
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test:coverage": "jest --coverage"
   },
   "eslintConfig": {
     "extends": [
@@ -42,6 +49,10 @@
     ]
   },
   "devDependencies": {
-    "tailwindcss": "^3.3.3"
+    "tailwindcss": "^3.3.3",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^14.0.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.5.1"
   }
 }
