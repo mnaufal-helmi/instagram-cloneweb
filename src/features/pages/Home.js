@@ -6,7 +6,5 @@ function Home() {
     <div>
       <SidebarNav/>
     </div>
-  )
-}
 
 export default Home
