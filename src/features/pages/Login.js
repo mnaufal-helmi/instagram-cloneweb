@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import LoginBox from '../Layouts/LoginBox';
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -22,32 +23,7 @@ function Login() {
   }
   return (
     <>
-      <div>
-        {isLoggedIn ? (
-          <div>
-            <h1>Welcome {email}</h1>
-            <button onClick={handleLogout}>Logout</button>
-          </div>
-        ) : (
-          <div>
-            <input 
-              type='email'
-              placeholder='email'
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <br />
-            <input 
-              type='password'
-              placeholder='password'
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <br />
-            <button onClick={handleLogin}>Login</button>
-          </div>
-        )}
-      </div>
+      <LoginBox />
     </>
   )
 }

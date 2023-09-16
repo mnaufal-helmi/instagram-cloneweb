@@ -110,8 +110,8 @@ export default function SidebarNav() {
       </div>
       <nav className="wrapperIcon">
         {sidemenu.map((item, index) => (
-          <ul className="space-y-2 mt-3 ">
-            <li key={index} className="">
+          <ul className="space-y-2 mt-3 " key={index}>
+            <li className="">
               <a href={item.page} className="text-red hover:bg-gray-200 flex">
                 <div
                   style={{ height: "60px", width: "100px" }}

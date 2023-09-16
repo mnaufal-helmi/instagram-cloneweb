@@ -1,16 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 import imagelogin from "../../assets/images/imglogin.png";
 import logo from "../../assets/images/instagram.png";
 import fb from "../../assets/images/fb-logo.png";
 import app from "../../assets/images/image1013.png";
 import play from "../../assets/images/image878.png";
 import { useNavigate } from 'react-router-dom';
+import { useMutation } from "react-query";
+import { API } from "../config/API";
+import { LoadingComponent } from "../../components/Form/LoadingPage";
 
 function LoginBox() {
   const navigate = useNavigate();
-  const Login = () => {
-    navigate('/')
+
+  const [loading, setLoading] =useState(true)
+  const [form, setForm] = useState({
+    username: '',
+    password: ''
+  })
+
+  console.log(form)
+
+  const {username, password} = form
+
+  const handleChange = (e) => {
+    setForm({
+      ...form,
+      [e.target.name] : e.target.value,
+    })
   }
+
+  const handleSubmit = useMutation(async (e) => {
+    try {
+      e.preventDefault()
+
+      const response = await API.post("/login", form)
+      console.log("Login success : ", response)
+      setLoading(false)
+      navigate("/")
+    } catch (error) {
+      console.log("Login Failed!!") 
+      setLoading(false)
+    }
+  })
+
+
   return (
     <>
       <div className="flex justify-center">
@@ -24,16 +57,20 @@ function LoginBox() {
                 <img className="h-20 w-48 m-2" src={logo} alt="wkkw" />
               </div>
               <div className="flex items-center justify-center">
-                <form className="p-6 rounded">
+                <form className="p-6 rounded" onSubmit={(e) => handleSubmit.mutate(e)}>
                   <input
                     className="w-full border  border-gray-300 p-1 mb-3 rounded focus:outline-none focus:ring focus:border-blue-800"
                     placeholder="Phone number, username, or email"
                     type="text"
+                    onChange={handleChange}
+                    name="username"
                   />
                   <input
                     className="w-full border border-gray-300 p-1 mb-3 rounded focus:outline-none focus:ring focus:border-blue-800"
                     placeholder="Password"
                     type="text"
+                    onChange={handleChange}
+                    name="password"
                   />
                   <div className="flex mb-3">
                     <input
@@ -43,7 +80,8 @@ function LoginBox() {
                     <p>Save login info</p>
                   </div>
                   
-                  <button className="w-full bg-cyan-500 rounded p-2 mb-3 text-white" onClick={Login}>
+                  <button className="w-full bg-cyan-500 rounded p-2 mb-3 text-white" type="submit">
+                    {/* {loading ? <LoadingComponent /> : "Log in"} */}
                     Log in
                   </button>
                 </form>

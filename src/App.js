@@ -7,6 +7,7 @@ import ProfilePage from './features/pages/Home.js'
 import { API } from './features/config/API';
 import { useQuery } from 'react-query';
 import Login from './features/pages/Login';
+import Register from './features/pages/Register';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route exact path='/Inbox' element={<InboxPage/>}/>
         <Route exact path='/Profile' element={<ProfilePage/>}/>
         <Route exact path='/Login' element={<Login/>}/>
+        <Route exact path='/Register' element={<Register/>}/>
       </Routes>
       </BrowserRouter>
     </>
