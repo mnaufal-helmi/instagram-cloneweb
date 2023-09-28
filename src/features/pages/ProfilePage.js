@@ -1,8 +1,16 @@
 import React from 'react'
+import SidebarNav from '../Layouts/SidebarNav'
+import ProfileBox from '../Layouts/ProfileBox'
 
 function ProfilePage() {
   return (
-    <div>ProfilePage</div>
+    <>
+    <div className='flex'> 
+
+    <SidebarNav />
+    <ProfileBox />
+    </div>
+    </>
   )
 }
 

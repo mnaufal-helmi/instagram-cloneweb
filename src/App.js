@@ -8,8 +8,7 @@ import { API } from './features/config/API';
 import { useQuery } from 'react-query';
 import Login from './features/pages/Login';
 import Register from './features/pages/Register';
-
-
+import Profile from './features/pages/ProfilePage';
 function App() {
   let {data: post} = useQuery("postCache", async () => {
     const response = await API.get("/posts")
@@ -27,6 +26,7 @@ function App() {
         <Route exact path='/Profile' element={<ProfilePage/>}/>
         <Route exact path='/Login' element={<Login/>}/>
         <Route exact path='/Register' element={<Register/>}/>
+        <Route exact path='/profileee' element={<Profile/>}/>
       </Routes>
       </BrowserRouter>
     </>
